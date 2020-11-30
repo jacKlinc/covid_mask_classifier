@@ -1,5 +1,4 @@
 from fastbook import *
-
 import streamlit as st
 from PIL import Image
 
@@ -30,7 +29,7 @@ if pic is not None:
     pil_img = PILImage.create(pic)
 
     # Predict category
-    pred,pred_idx,probs = predict_img(pil_img)
+    pred, pred_idx, probs = predict_img(pil_img)
 
 # Classify
 if st.button('Classify'):
