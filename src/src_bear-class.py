@@ -1,7 +1,4 @@
-import fastbook
-fastbook.setup_book()
 from fastbook import *
-from fastai.vision.widgets import *
 
 import streamlit as st
 from PIL import Image
@@ -15,7 +12,7 @@ def predict_img(img):
         return learner_inf.predict(pil_img)
 
 'Import the pickle file'
-learner_inf = load_learner('../export.pkl')
+learner_inf = load_learner('./export.pkl')
 
 # Upload
 pic = st.file_uploader("Upload Files")
