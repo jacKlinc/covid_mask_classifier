@@ -90,7 +90,6 @@ thinc==7.4.3
 threadpoolctl==2.1.0
 toml==0.10.2
 toolz==0.11.1
-torch==1.7.0
 torchvision==0.8.1
 tornado==6.1
 tqdm==4.54.0
