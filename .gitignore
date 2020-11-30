@@ -1,0 +1,6 @@
+myenv/bin/
+myenv/etc/
+myenv/include/
+myenv/lib/
+myenv/lib64/
+myenv/share/
