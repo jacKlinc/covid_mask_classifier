@@ -1,4 +1,5 @@
-from fastbook import *
+from fastai.learner import load_learner
+from fastai.vision.core import PILImage
 
 import streamlit as st
 from PIL import Image
