@@ -12,11 +12,14 @@ def predict_img(img):
     if img is not None:
         return learner_inf.predict(pil_img)
 
-'Import the pickle file'
+'## COVID-19 Mask Classifier'
+'Upload a picture of someone'
 learner_inf = load_learner('./covid_mask.pkl')
 
 # Upload
 pic = st.file_uploader("Upload Files")
+
+'Click Classify to find out if there wearing a mask'
 
 probs = []
 pred_idx = 1
@@ -27,6 +30,7 @@ if pic is not None:
     img = load_image(pic)
     st.image(img)
     
+    
     # Parse image
     pil_img = PILImage.create(pic)
 
@@ -35,5 +39,9 @@ if pic is not None:
 
 # Classify
 if st.button('Classify'):
-    'Prediction: ', pred 
-    'Probability: ', probs[pred_idx].item()
+    if str(pred) == 'peoples faces':
+        pred = 'no mask'
+    else:
+        pred = 'has mask'
+    'Prediction: ', pred
+    'Probability: ', str(round(probs[pred_idx].item(), 5))
