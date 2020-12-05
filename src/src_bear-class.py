@@ -39,9 +39,9 @@ if pic is not None:
 
 # Classify
 if st.button('Classify'):
-    if str(pred) == 'peoples faces':
-        pred = 'no mask'
+    if str(pred) in ('no_mask', 'beard'):
+        pred = 'No mask'
     else:
-        pred = 'has mask'
+        pred = 'Mask'
     'Prediction: ', pred
     'Probability: ', str(round(probs[pred_idx].item(), 5))
