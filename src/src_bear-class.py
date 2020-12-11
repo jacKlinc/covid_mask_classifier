@@ -4,15 +4,23 @@ from fastai.vision.core import PILImage
 import streamlit as st
 from PIL import Image
 
-# @st.cache
 def load_image(image):
+    '''
+    Pass    BytesIO image
+    Return  PILImage object
+    '''
     return Image.open(image)
 
 def predict_img(img):
+    '''
+    Pass    PILImage object
+    Return  prediction[str], prediction_idx[int], probability[tensor]
+    '''
     if img is not None:
         return learner_inf.predict(pil_img)
 
 '## COVID-19 Mask Classifier'
+"Here's the [GitHub](https://github.com/jacKlinc/covid_mask_classifier) repo"
 'Upload a picture of someone'
 learner_inf = load_learner('./covid_mask.pkl')
 
